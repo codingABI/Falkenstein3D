@@ -4,7 +4,7 @@
 - s/S = Change pixel size (impacts performance)
 - 1 = on/off for textures for floor and roof
 - 2 = on/off for floor, roof, sky and ground
-- 3 = change raycaster engine (old <-> DDA) 
+- 3 = change raycaster engine (old from codingABI <-> DDA from Lode Vandevenne) 
 - 4 = on/off for round pixels
 - 5 = on/off for automatically set pixel size dependent on framerate
 - t/T = on/off for all textures

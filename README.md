@@ -1,5 +1,18 @@
 # Falkenstein3D
 
+## Keyboard control:
+- s/S = Change pixel size (impacts performance)
+- 1 = on/off for textures for floor and roof
+- 2 = on/off for floor, roof, sky and ground
+- 3 = change raycaster engine (old <-> DDA) 
+- 4 = on/off for round pixels
+- 5 = on/off for automatically set pixel size dependent on framerate
+- t/T = on/off for all textures
+- f/F = on/off for fullscreen mode
+- ESC,q,Q = exit program
+- Cursor left/right = rotate player
+- Cursor up/down = move player
+
 ## License and copyright
 
 This code for this project is licensed under the terms of the 2-Clause BSD License from two owners:

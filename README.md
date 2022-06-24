@@ -20,8 +20,8 @@ This code for this project is licensed under the terms of the 2-Clause BSD Licen
 - For general coding: [Copyright (c) 2022 codingABI](LICENSE.md)
 - For the DDA raycaster functions (drawRaycastDDA, drawBackground, sortSprites and drawSprites): [Copyright (c) 2004-2021, Lode Vandevenne](LICENSE.DDA)
 
-This project uses the external freeGlut-Library with the license:
-- [Copyright (c) 1999-2000 Pawel W. Olszta](LICENSE.freeGlut)
+This project uses the external Libraries:
+- freeGlut [Copyright (c) 1999-2000 Pawel W. Olszta](LICENSE.freeGlut)
 
 The textures for this project are licensed:
 - Textures Nr6, 7: Screaming Brain Studios, CC0 

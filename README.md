@@ -11,7 +11,7 @@
 - f/F = on/off for fullscreen mode
 - ESC,q,Q = exit program
 - Cursor left/right = rotate player
-- Cursor up/down = move player
+- Cursor up/down = move player forward/backward
 
 ## License and copyright
 

@@ -17,8 +17,8 @@
 
 This code for this project is licensed under the terms of the 2-Clause BSD License from two owners:
 
-- For general coding: [Copyright (c) 2022 codingABI](LICENSE.md)
-- For the DDA raycaster functions (drawRaycastDDA, drawBackground, sortSprites and drawSprites): [Copyright (c) 2004-2021, Lode Vandevenne](LICENSE.DDA)
+- Source code (except DDA raycaster functions): [Copyright (c) 2022 codingABI](LICENSE.md)
+- DDA raycaster functions (drawRaycastDDA, drawBackground, sortSprites and drawSprites): [Copyright (c) 2004-2021, Lode Vandevenne](LICENSE.DDA)
 
 This project uses the external Libraries:
 - freeGlut [Copyright (c) 1999-2000 Pawel W. Olszta, X-Consortium license](LICENSE.freeGlut)

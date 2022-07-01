@@ -4,7 +4,7 @@ OpenGL raycaster game. Player has to find the exit of the castle. Game is short 
 
 This Project uses two different raycaster engines, which can be select by pressing Key "3":
 - Degree based raycaster by codingABI, inspired by https://github.com/3DSage/OpenGL-Raycaster_v1 and https://github.com/3DSage/OpenGL-Raycaster_v2
-- DDA Raycaster by Lode Vandevenne (see license details below), faster and used by default
+- DDA Raycaster by Lode Vandevenne (see [license details](#license-and-copyright) below), faster and used by default
 
 ## Keyboard control:
 - s/S = Change pixel size (impacts performance)

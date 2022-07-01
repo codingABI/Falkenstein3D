@@ -31,8 +31,8 @@ This Project uses two different raycaster engines, which can be select by pressi
 ## Screenshots
 ![Start screen](assets/images/Screenshot01.jpg)
 We need no "coins". Just press any key to start the game...
-![During game](assets/images/Screenshot02.jpg)
-![License screen](assets/images/Screenshot03.jpg)
+![License screen](assets/images/Screenshot02.jpg)
+![Open wall](assets/images/Screenshot03.jpg)
 
 ## License and copyright
 

@@ -424,7 +424,7 @@ void drawBackground() {
 	
 	if (!g_showBackground) return;
 
-	if (glutGet(GLUT_ELAPSED_TIME) - autoSkyRotateTime > 100) { // move sky 100 ms one texture pixel
+	if (glutGet(GLUT_ELAPSED_TIME) - autoSkyRotateTime > 100) { // move sky every 100 ms one texture pixel
 		autoSkyRotate++;
 		autoSkyRotateTime=glutGet(GLUT_ELAPSED_TIME);
 	}
@@ -878,7 +878,7 @@ void drawRaycast() {
 	static GLint autoSkyRotateTime = 0;
 	static int autoSkyRotate = 0;
 	
-	if (glutGet(GLUT_ELAPSED_TIME) - autoSkyRotateTime > 100) { // move sky 100 ms one texture pixel
+	if (glutGet(GLUT_ELAPSED_TIME) - autoSkyRotateTime > 100) { // move sky every 100 ms one texture pixel
 		autoSkyRotate++;
 		autoSkyRotateTime=glutGet(GLUT_ELAPSED_TIME);
 	}

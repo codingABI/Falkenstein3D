@@ -13,6 +13,21 @@
 - Cursor left/right = rotate player
 - Cursor up/down = move player forward/backward
 
+## Joystick control:
+- left/right - rotate player
+- up/down - move player forward/backward
+ 
+## Mouse control:
+- left/right mouse button - rotate player
+- middle mouse button - move player forward
+- scroll button backward - move player backward
+
+## Screenshots
+![Start screen](assets/images/Screenshot01.jpg)
+We need no "coins". Just press any key to start the game...
+![During game](assets/images/Screenshot02.jpg)
+![License screen](assets/images/Screenshot03.jpg)
+
 ## License and copyright
 
 This code for this project is licensed under the terms of the 2-Clause BSD License from two owners:

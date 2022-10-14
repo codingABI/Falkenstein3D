@@ -6,7 +6,7 @@
  *
  * created by codingABI https://github.com/codingABI/Falkenstein3D 
  *
- * This Project uses two different raycaster engines, which can be select by pressing Key "3":
+ * This project uses two different raycaster engines, which can be select by pressing Key "3":
  * - Degree based raycaster by codingABI, inspired by https://github.com/3DSage/OpenGL-Raycaster_v1 and https://github.com/3DSage/OpenGL-Raycaster_v2
  * - DDA Raycaster by Lode Vandevenne (see license details below), faster and used by default
  *
@@ -38,6 +38,7 @@
  * 30.06.2022, Fix offset bug in sky and ground texture, when changing pixel size
  * 01.07.2022, Add joystick and mouse support
  * 01.07.2022, First upload to github
+ * 14.10.2022, Replace strncpy by snprintf
  *
  * ----------------------------------------------------------------
  * License details:
@@ -220,7 +221,7 @@ int g_savedWindowHeight;
 #define DISPLAYTEXTMAXLENGTH 80
 #define DISPLAYTEXTTIMEOUT 5
 #define DISPLAYTEXTFINISHDURATIONLENGTH 5
-char g_displayText[DISPLAYTEXTMAXLENGTH] ="";
+char g_displayText[DISPLAYTEXTMAXLENGTH+1] ="";
 bool g_displayTextBlinking = false;
 
 // games states
@@ -635,7 +636,7 @@ void drawSprites() {
 					g_wallMap[y][x] = 0; // open wall
 										
 					g_stateStartTime = glutGet(GLUT_ELAPSED_TIME);
-					strncpy(g_displayText,"Wall open",DISPLAYTEXTMAXLENGTH);
+					snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Wall open");
 	    			g_displayTextBlinking = false;					
 				}
 				continue;
@@ -1328,10 +1329,10 @@ void drawMessage(){
 			#ifndef FREETEXTURES
 			int posY = g_viewPort3dHeight*g_pixelSize/2-(3*(26+32)+26);
 			
-			strncpy(g_displayText,"Compiled binary:",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Compiled binary:");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"(c) 2022 codingABI, CC BY-NC-SA 4.0",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"(c) 2022 codingABI, CC BY-NC-SA 4.0");
 			drawCenteredTextLine(posY);
 			posY += 36;
 
@@ -1340,62 +1341,62 @@ void drawMessage(){
 			int posY = g_viewPort3dHeight*g_pixelSize/2-(2*(26+32)+32);
 			 
 			#endif
-			strncpy(g_displayText,"Source code (except DDA raycaster):",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Source code (except DDA raycaster):");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"(c) 2022 codingABI, 2-Clause BSD",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"(c) 2022 codingABI, 2-Clause BSD");
 			drawCenteredTextLine(posY);
 			posY += 36;
-			strncpy(g_displayText,"DDA raycaster:",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"DDA raycaster:");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"(c) 2004-2021, Lode Vandevenne, 2-Clause BSD",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"(c) 2004-2021, Lode Vandevenne, 2-Clause BSD");
 			drawCenteredTextLine(posY);
 			posY += 36;
-			strncpy(g_displayText,"Library freeGlut:",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Library freeGlut:");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"(c) 1999-2000 Pawel W. Olszta, X-Consortium license",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"(c) 1999-2000 Pawel W. Olszta, X-Consortium license");
 			drawCenteredTextLine(posY);
 			posY += 36;
 			
 			#ifdef FREETEXTURES 
 
-			strncpy(g_displayText,"Textures Nr6,7 (Roof and grass):",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Textures Nr6,7 (Roof and grass):");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"Screaming Brain Studios, CC0",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Screaming Brain Studios, CC0");
 			drawCenteredTextLine(posY);
 			posY += 36;
-			strncpy(g_displayText,"All other textures:",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"All other textures:");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"codingABI, CC BY-SA 3.0",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"codingABI, CC BY-SA 3.0");
 			drawCenteredTextLine(posY);
 
 			#else
 			
-			strncpy(g_displayText,"Textures Nr4,10,11,12,15,16,17,18,19,20,21,22,23,25,26 (historical textures):",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Textures Nr4,10,11,12,15,16,17,18,19,20,21,22,23,25,26 (historical textures):");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"(c) Bayerisches Hauptstaatsarchiv, CC BY-NC-SA 4.0",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"(c) Bayerisches Hauptstaatsarchiv, CC BY-NC-SA 4.0");
 			drawCenteredTextLine(posY);			
 			posY += 36;
-			strncpy(g_displayText,"Textures Nr6,7 (Roof and grass):",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Textures Nr6,7 (Roof and grass):");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"Screaming Brain Studios, CC0",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Screaming Brain Studios, CC0");
 			drawCenteredTextLine(posY);
 			posY += 36;
-			strncpy(g_displayText,"Textures Nr1,2,3,5,8,9,14,24:",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Textures Nr1,2,3,5,8,9,14,24:");
 			drawCenteredTextLine(posY,true);
 			posY += 26;
-			strncpy(g_displayText,"codingABI, CC BY-SA 3.0",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"codingABI, CC BY-SA 3.0");
 			drawCenteredTextLine(posY);
 						
 			#endif
 			posY += 36;
-			strncpy(g_displayText,"......",DISPLAYTEXTMAXLENGTH);
+			snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"......");
 			g_displayText[DISPLAYTEXTTIMEOUT-timeDelta]='\0';
 			drawCenteredTextLine(posY);
 
@@ -1407,7 +1408,7 @@ void drawMessage(){
 
 		int posY = g_viewPort3dHeight*g_pixelSize/2;
 
-		strncpy(g_displayText,"Fin",DISPLAYTEXTMAXLENGTH);
+		snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Fin");
 		drawCenteredTextLine(posY);
 
 
@@ -1427,10 +1428,9 @@ void drawMessage(){
 	drawCenteredTextLine(g_viewPort3dHeight*g_pixelSize/2);
 	
 	if ((g_state == STATE_RUNNING) && (glutGet(GLUT_ELAPSED_TIME)-g_stateStartTime > DISPLAYTEXTTIMEOUT*1000)) { // autohide text in game state after a few seconds
-		strncpy(g_displayText,"",DISPLAYTEXTMAXLENGTH);
+		g_displayText[0]='\0';
     	g_displayTextBlinking = false;
-	}
-	
+	}	
 }
 
 // Go to running state
@@ -1439,7 +1439,7 @@ void changeStateToRunning() {
 	g_state = STATE_RUNNING;
 	g_stateStartTime = glutGet(GLUT_ELAPSED_TIME);
 	g_gameStartTime = g_stateStartTime;
-	strncpy(g_displayText,"Find the exit...",DISPLAYTEXTMAXLENGTH);
+	snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Find the exit...");
    	g_displayTextBlinking=false;
 }
 
@@ -1449,7 +1449,7 @@ void changeStateToFinished() {
 	g_state = STATE_FINISHED;
 	g_stateStartTime = glutGet(GLUT_ELAPSED_TIME);
 	g_gameEndTime = g_stateStartTime;
-	strncpy(g_displayText,"",DISPLAYTEXTMAXLENGTH);
+	g_displayText[0]='\0';
    	g_displayTextBlinking=false;
 }
 
@@ -1458,7 +1458,7 @@ void changeStateToStart() {
 	if (g_state == STATE_QUIT) return; // not possible in quit program state
 	g_state = STATE_START;
 	g_stateStartTime = glutGet(GLUT_ELAPSED_TIME);
-	strncpy(g_displayText,"Insert coins...",DISPLAYTEXTMAXLENGTH);
+	snprintf(g_displayText,DISPLAYTEXTMAXLENGTH+1,"Insert coins...");
    	g_displayTextBlinking=true;
    	g_gameStartTime = 0;
    	
@@ -1495,7 +1495,7 @@ void changeStateToStart() {
 void changeStateToQuit() {
 	g_state = STATE_QUIT;
 	g_stateStartTime = glutGet(GLUT_ELAPSED_TIME);
-	strncpy(g_displayText,"",DISPLAYTEXTMAXLENGTH);
+	g_displayText[0]='\0';
    	g_displayTextBlinking=false;
 }
 
